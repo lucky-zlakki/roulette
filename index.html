@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<button id="butt" onclick="start()">Старт</button>
+<h1 id="name">Название Товара</h1>
+<h2 id="qual"> Качество</h2>
+<h3 id="price">Цена: </h3>
+<h3 id="all">Общая:</h3>
+
+<script>
+var time= 0;
+var price =0;
+var qual = 0;
+var money =0;
+var text = document.getElementById("name");
+var qual2 = [" ","Низший сорт",  "Залежавшаяся",  "После Транспортировки",  "Немного Залежавшаяся", "Прямо с Поля"];
+function start(){
+	document.getElementById("butt").style.display = "none";
+	setTimeout(random , 0) ;	
+}
+	function random(){	
+		if(time <=950){
+	var x= Math.floor(Math.random()*100) +1;
+	if(time <100){
+		time=time +1;
+		}
+	else {
+	time= time+100;
+	}
+	 if(x==100){
+		rare = 5320;
+		text.style.color= "yellow";
+	text.innerHTML = "золотой";
+		}
+		else if((x<100 )&&(x>=97)){
+			rare= 1720;
+			text.style.color= "red";
+		text.innerHTML = "красный";
+		}
+		else if((x<97)&&(x>=90)){
+			rare=690;
+			text.style.color =  "pink";
+		text.innerHTML = "розовый";
+		}
+		else if((x<90 )&&(x>=75)){
+			rare = 160;
+		text.style.color = "purple";
+	text.innerHTML = "фиолетовый";
+		}
+		else {
+			rare= 15;
+			text.style.color = "blue";
+		text.innerHTML = "синий";
+		
+		
+		}
+		setTimeout(random,time );
+}
+else{
+setTimeout(win,0);
+}
+}
+
+
+function win(){
+	document.getElementById("butt").style.display = "block";
+
+	qual= Math.floor(Math.random()*5) +1;
+text.style.textDecoration= "underline";
+document.getElementById("qual").innerHTML = qual2[qual];
+
+
+price = Math.round(rare * ((qual*8+60)/100));
+money = money + price -99;
+document.getElementById("all").innerHTML= "Общая: " + money + "руб.";
+document.getElementById("price").innerHTML= "Цена: " + price +" руб.";
+time=0;
+
+
+}
+</script>
+
+</body>
+</html>
