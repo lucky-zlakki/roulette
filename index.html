@@ -2,7 +2,6 @@
 <html>
 <head>
     <title></title>
-<link rel="stylesheet" href="/css/style.css" />
 <link rel="stylesheet" href="style.css">
 <link rel="shortcut icon" href="img/LZ-min.png" type="image/x-icon">
 </head>
@@ -19,9 +18,19 @@
 
 
 
+<section class="prize">
+  <div class="win">
 
+<div class="photo">
 
-  <section class="case">
+</div>
+<div class="money">
+
+</div>
+  </div>
+</section>
+
+  <section class="case" id="case">
 <div class="bordik">
 
 </div>
@@ -33,7 +42,7 @@
 <div class="open">
 
   <div class="segment" id="segment3">
-    <img id="img3" src="img/omegalul.png" alt="">
+    <img id="img3" src="" alt="">
     <div class="down" id="down3">
 <p class="type" id="type3">Тип</p>
 <p id="name3">Название<p>
@@ -42,7 +51,7 @@
 
 
     <div class="segment" id="segment2">
-      <img id="img2" src="img/omegalul.png" alt="">
+      <img id="img2" src="" alt="">
       <div class="down" id="down2">
 <p class="type" id="type2">Тип</p>
 <p  id="name2">Название<p>
@@ -51,7 +60,7 @@
 
 
   <div class="segment" id="segment1">
-    <img id="img1" src="img/omegalul.png" alt="">
+    <img id="img1" src="" alt="">
     <div class="down" id="down1">
 <p class="type" id="type1">Тип</p>
 <p  id="name1">Название<p>
@@ -60,12 +69,18 @@
     </div>
 </div>
   </section>
-  <section class="button" id="button">
+  <section id="face">
+  <section class="name">
+    <section class="lastname">
+      <p>Сельский пахарь</p>
+    </section>
+  </section>
+  <section class="button">
     <div class="click" onclick="start()">
 Открыть кейс
 </div>
   </section>
-
+</section>
 
   <p id="qual">Качество</p>
   <p id="cost">Цена:</p>
@@ -122,11 +137,19 @@ var qual = [" ","Низший сорт",  "Залежавшаяся",  "Посл
 var final = new Audio('img/final.ogg');
 var starts = new Audio('img/start.mp3');
 function start(){
-starts.play();
-document.getElementById('button').style.height=0;
-document.getElementById('button').style.opacity=0;
-  setTimeout(proces,0);
+document.getElementById('face').style.height=0;
+document.getElementById('face').style.opacity=0;
+  document.getElementById('case').style.display="block";
+  setTimeout(pre,400);
 }
+function pre(){
+  starts.play();
+  document.getElementById('case').style.height="60vh";
+  document.getElementById('case').style.opacity=1;
+  document.getElementById('face').style.display="none";
+  setTimeout(proces);
+}
+
 function proces() {
   if(time <=900){
 
@@ -148,11 +171,11 @@ cost2=cost1;
 	if(time <100){
 		time=time +5;
 		}
-  else if((time<120 )&&(time>=100)){
+  else if((time<150 )&&(time>=100)){
     time=time +1;
   }
 	else {
-	time= time+80;
+	time= time+120;
 	}
   var random1=Math.floor(Math.random()*100) +1;
   if (random1==100) {
@@ -233,7 +256,7 @@ cost2=cost1;
 		}
 		else {
       color1="linear-gradient(45deg,#1155dd,#0b2863)";
-      img1="img/smile.png";
+
 		var random2 = Math.floor(Math.random()*5) +1;
     switch (random2) {
     case 1:
@@ -298,10 +321,21 @@ setTimeout(result,1000);
 
 function result(){
   var random3=Math.floor(Math.random()*5) +1;
+  document.getElementById('face').style.height="60vh";
+  document.getElementById('face').style.opacity=1;
   document.getElementById('qual').innerHTML = qual[random3];
   document.getElementById('cost').innerHTML = "Цена: "+cost2+"руб.";
+    document.getElementById('face').style.display="block";
+    document.getElementById('case').style.height=0;
+    document.getElementById('case').style.opacity=0;
 time=0;
 final.play();
+setTimeout(aft,1000);
+}
+function aft(){
+document.getElementById('case').style.display="none";
+document.getElementById('face').style.height="60vh";
+document.getElementById('face').style.opacity=1;
 }
 </script>
 
