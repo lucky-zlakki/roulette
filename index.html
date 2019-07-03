@@ -2,96 +2,308 @@
 <html>
 <head>
     <title></title>
-<link rel="stylesheet" href="./css/style.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="img/LZ-min.png" type="image/x-icon">
 </head>
 <body>
-<button id="butt" onclick="start()">Старт</button>
-<h3 id="beforebefore">Прошлое Прошлое</h3>
-<h2 id="before">Прошлое</h2>
-<h1 id="name">Будущее</h1>
-<h2 id="qual"> Качество</h2>
-<h3 id="price">Цена: </h3>
-<h3 id="all">Общая:</h3>
+  <header>
+    <img id="logo" src="img/LZ1.png" alt="">
+  </header>
 
-<script>
-var y= 0;
-var z=0;
- var colortext= "black";
-var nametext = "kek ";
-var time= 0;
-var price =0;
-var qual = 0;
-var money =0;
-var qual2 = [" ","Низший сорт",  "Залежавшаяся",  "После Транспортировки",  "Немного Залежавшаяся", "Прямо с Поля"];
+  <nav id="navbar">
+      <a href="http://lucky-zlakki.github.io" class="active">Главная</a>
+      <a href="https://lucky-zlakki.github.io/roulette/">Кейсы</a>
+      <a href="https://lucky-zlakki.github.io/partners/">Спонсоры</a>
+  </nav>
+
+
+
+
+
+  <section class="case">
+<div class="bordik">
+
+</div>
+<div class="bord">
+  <div class="arrow">
+  </div>
+</div>
+
+<div class="open">
+
+  <div class="segment" id="segment3">
+    <img id="img3" src="img/omegalul.png" alt="">
+    <div class="down" id="down3">
+<p class="type" id="type3">Тип</p>
+<p id="name3">Название<p>
+</div>
+  </div>
+
+
+    <div class="segment" id="segment2">
+      <img id="img2" src="img/omegalul.png" alt="">
+      <div class="down" id="down2">
+<p class="type" id="type2">Тип</p>
+<p  id="name2">Название<p>
+  </div>
+</div>
+
+
+  <div class="segment" id="segment1">
+    <img id="img1" src="img/omegalul.png" alt="">
+    <div class="down" id="down1">
+<p class="type" id="type1">Тип</p>
+<p  id="name1">Название<p>
+</div>
+
+    </div>
+</div>
+  </section>
+  <section class="button" id="button">
+    <div class="click" onclick="start()">
+Открыть кейс
+</div>
+  </section>
+
+
+  <p id="qual">Качество</p>
+  <p id="cost">Цена:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var time=0;
+var type1;
+var type2;
+var type3;
+
+var name1;
+var name2;
+var name3;
+
+var color1;
+var color2;
+var color3;
+
+var img1;
+var img2;
+var img3;
+
+var cost1;
+var cost2;
+
+var qual = [" ","Низший сорт",  "Залежавшаяся",  "После Транспортировки",  "Немного Залежавшаяся", "Прямо с Поля"];
+var final = new Audio('img/final.ogg');
+var starts = new Audio('img/start.mp3');
 function start(){
-	document.getElementById("butt").style.display = "none";
-	setTimeout(random , 0) ;	
+starts.play();
+document.getElementById('button').style.height=0;
+document.getElementById('button').style.opacity=0;
+  setTimeout(proces,0);
 }
-	function random(){	
-		if(time <=900){
-			z = y;
-			y= colortext;
-				var x= Math.floor(Math.random()*100) +1;
+function proces() {
+  if(time <=900){
+
+
+img3=img2;
+img2=img1;
+
+  type3=type2
+  type2=type1
+
+name3=name2;
+name2=name1;
+
+color3=color2;
+color2=color1;
+
+cost2=cost1;
+
 	if(time <100){
-		time=time +1;
+		time=time +5;
 		}
+  else if((time<120 )&&(time>=100)){
+    time=time +1;
+  }
 	else {
-	time= time+100;
+	time= time+80;
 	}
-	 if(x==100){
-		rare = 5320;
-		colortext= "yellow";
-		nametext = "золотой";
+  var random1=Math.floor(Math.random()*100) +1;
+  if (random1==100) {
+    color1="linear-gradient(45deg,#caab05,#716003)";
+    var random2 = Math.floor(Math.random()*2) +1;
+    switch (random2) {
+      case 1:
+      type1="Круто";
+      name1="ОМЕГАЛУЛ";
+      cost1= 1000;
+        break;
+      case 2:
+      type1= "ПРЕКРАСНО"
+      name1="МОНКАОМЕГА";
+      cost1= 999;
+      break;}
+    }
+    else if((random1<100 )&&(random1>=97)){
+      color1="linear-gradient(45deg,#eb4b4b,#902d2d)";
+		var random2 = Math.floor(Math.random()*2) +1;
+    switch (random2) {
+      case 1:
+      type1= "Д"
+      name1="5Хед";
+      cost1= 300;
+        break;
+      case 2:
+      type1= "Ж"
+      name1="ФилсГудМэн";
+      cost1= 299;
+      break;}
+
 		}
-		else if((x<100 )&&(x>=97)){
-			rare= 1720;
-			colortext= "red";
-		nametext = "красный";
+		else if((random1<97)&&(random1>=90)){
+      color1="linear-gradient(45deg,#d32ce6,#6b1874)";
+		var random2 = Math.floor(Math.random()*3) +1;
+    switch (random2) {
+    case 1:
+    type1= "В";
+    name1="Пепега";
+    cost1= 200;
+    break;
+    case 2:
+    type1= "Г"
+    name1="ПогЧамп";
+    cost1= 199;
+    break;
+    case 3:
+    type1= "Е"
+    name1="Лул";
+    cost1= 198;
+    break;}
 		}
-		else if((x<97)&&(x>=90)){
-			rare=690;
-			colortext =  "pink";
-		nametext = "розовый";
-		}
-		else if((x<90 )&&(x>=75)){
-			rare = 160;
-		colortext= "purple";
-	nametext = "фиолетовый";
+		else if((random1<90 )&&(random1>=75)){
+      color1="linear-gradient(45deg,#884dff,#5b33aa)";
+	var random2 = Math.floor(Math.random()*4) +1;
+  switch (random2) {
+  case 1:
+  type1= "Я"
+  name1="Каппа";
+  cost1= 100;
+  break;
+  case 2:
+  type1= "Х"
+  name1="ФорХед";
+  cost1= 99;
+  break;
+  case 3:
+  type1= "П"
+  name1="ГачиБасс";
+  cost1= 98;
+  break;
+  case 4:
+  type1= "Л"
+  name1="МонкаС";
+  cost1= 97;
+  break;}
 		}
 		else {
-			rare= 15;
-			colortext= "blue";
-		nametext= "синий";
+      color1="linear-gradient(45deg,#1155dd,#0b2863)";
+      img1="img/smile.png";
+		var random2 = Math.floor(Math.random()*5) +1;
+    switch (random2) {
+    case 1:
+    type1= "А"
+    name1=":)";
+    cost1= 30;
+    break;
+    case 2:
+    type1= "Ф"
+    name1=":(";
+    cost1= 29;
+    break;
+    case 3:
+    type1= "Ж"
+    name1="B)";
+    cost1= 28;
+    break;
+    case 4:
+    type1= "Ш"
+    name1=":O";
+    cost1= 27;
+    break;
+    case 5:
+    type1= "С"
+    name1=";P";
+    cost1= 26;
+    break;}
 		}
-		document.getElementById('beforebefore').style.color= z;
-		document.getElementById('before').style.color= y;
-		document.getElementById("name").innerHTML= nametext;
-		document.getElementById("name").style.color = colortext;
-		setTimeout(random,time );
+    document.getElementById('name1').innerHTML = name1;
+    document.getElementById('down1').style.background = color1;
+      document.getElementById('type1').innerHTML = type1;
+      document.getElementById('img1').src= img1;
+
+    document.getElementById('name2').innerHTML = name2;
+    document.getElementById('down2').style.background = color2;
+    document.getElementById('type2').innerHTML = type2;
+    document.getElementById('img2').src= img2;
+
+    document.getElementById('name3').innerHTML = name3;
+    document.getElementById('down3').style.background = color3;
+      document.getElementById('type3').innerHTML= type3;
+      document.getElementById('img3').src= img3;
+
+
+    let sound = new Audio('img/sound.mp3');
+    sound.play();
+
+
+
+
+setTimeout(proces,time);
+  }
+
+
+
+
+    else {
+setTimeout(result,1000);
 }
-else{
-setTimeout(win,0) ;
-}
-}
+  }
 
 
-function win(){
-	document.getElementById("butt").style.display = "block";
-
-	qual= Math.floor(Math.random()*5) +1;
-document.getElementById("qual").innerHTML = qual2[qual];
-
-
-price = Math.round(rare * ((qual*8+60)/100));
-money = money + price -99;
-document.getElementById("all").innerHTML= "Общая: " + money + "руб.";
-document.getElementById("price").innerHTML= "Цена: " + price +" руб.";
+function result(){
+  var random3=Math.floor(Math.random()*5) +1;
+  document.getElementById('qual').innerHTML = qual[random3];
+  document.getElementById('cost').innerHTML = "Цена: "+cost2+"руб.";
 time=0;
-
-
+final.play();
 }
 </script>
 
 </body>
 </html>
-    
