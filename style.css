@@ -365,11 +365,13 @@ color: rgba(255,255,255,0.9);
   height: 10vh;
   background:linear-gradient(45deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.9), rgba(255,255,255,0) 70%),
   linear-gradient(184deg,rgba(63,30,179,0.8),rgba(174,0,55,0.9)),#AE0000;
-  background-position: 200% 0, 0 0, 0 0;
   background-repeat: no-repeat;
-background-size: 200% 100%, auto;
+background-size: 160% 100%, auto;
 border-radius: 10vh;
 box-shadow:0 0 5vh 1vh #CBB7E9;
+animation: blick 8s ease-in-out infinite;
+  background-position: 200% 0, 0 0, 0 0;
+
 }
 
 .button .click:active {
@@ -377,4 +379,9 @@ box-shadow:0 0 5vh 1vh #CBB7E9;
 top:1vh;
 box-shadow:0 0 5vh 2vh #762CE5;
 color: rgba(255,255,255,0.7);
+}
+@keyframes blick {
+
+  90%{background-position: 200% 0, 0 0, 0 0;}
+100%{background-position: -200% 0, 0 0, 0 0;}
 }
