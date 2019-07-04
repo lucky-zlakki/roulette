@@ -11,6 +11,9 @@ a{
   text-decoration: none;
   color:white;
 }
+p{
+  cursor: default;
+}
 header{
   opacity: 0.9;
   background:#00C864;
@@ -161,6 +164,7 @@ width: 100%;
   bottom: -10vh;
 }
 .prize .money #rich{
+  cursor:pointer;
   transition: 1s;
   text-align: center;
   text-shadow: 0.1vh 0.1vh 1vh black;
@@ -346,6 +350,7 @@ background: -webkit-linear-gradient(#0089CE, #1C1C1C);
   width: 100%;
 }
 .button .click{
+  cursor:pointer;
 color: rgba(255,255,255,0.9);
   font-family: fantasy;
   text-align: center;
