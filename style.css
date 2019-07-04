@@ -46,7 +46,6 @@ nav{
   font-size: 0;
   animation: color 120s ease-in-out infinite;
   border-radius:0 0 50% 50%;
-  margin-bottom: -1.3vh;
   position: relative;
 }
 nav a{
@@ -71,8 +70,116 @@ nav a.active{
   border-bottom: 0.6vh solid white;
 }
 
+#blackscreen{
+  display: none;
+  top:0;
+  position: fixed;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+height:100%;
+width: 100%;
+}
 
+.prize{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50%;
+  height: 80vh;
+  background-color: #282729;
+}
+.prize .win{
+  font-family: sans-serif;
+  position: fixed;
+  width: 50%;
+  height: 70vh;
+  background: linear-gradient(gray 30% ,#282729 80%);
+  box-shadow: 0vh 1vh 3vh 0vh black;
+}
+.prize .win #fname{
+  margin: 0;
+  text-align: center;
+  font-size: 3.5vh;
+  color: white;
+  animation: style 1s ease-in-out 1;
+  text-shadow: 0.5vh 0.5vh 0.5vh black
+}
+.prize .win .photo{
 
+  position: fixed;
+  width: 48%;
+  height: 61vh;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 10vh;
+  margin: auto;
+  background: url(img/backprize.jpg);
+  background-size: cover;
+  transform: none;
+
+}
+.prize .win .photo #fphoto{
+  position: fixed;
+  width: 45vh;
+  height: 45vh;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  animation: style 1s ease-in-out 1;
+}
+.prize .win .photo #qual{
+  box-shadow: 1vh -1.2vh 1.5vh #C1C1C1;
+  border-radius:0 70% 0 0;
+  position:relative;
+  color: white;
+  background-color: #282729;
+  height: 5vh;
+  width: 55%;
+  margin-top: 56.5vh;
+  font-family: sans-serif;
+  font-size: 4vh;
+  padding-left: 2vh;
+}
+@keyframes style {
+  0%{transform: scale3d(-0.1,0.8,1);}
+100%{transform: none;}
+}
+
+.prize .money{
+  position: fixed;
+  width: 50%;
+  height: 8vh;
+  box-shadow: 0vh 0vh 0vh 0vh black;
+  top: 82vh;
+  margin: auto;
+}
+.prize .money #rich{
+  transition: 1s;
+  text-align: center;
+  text-shadow: 0.1vh 0.1vh 1vh black;
+  color: #E1E1E1;
+  font-size: 5vh;
+  width: 50%;
+height: 6vh;
+background: linear-gradient(rgba(74, 209, 0, 0.6),rgba(29, 66, 0, 0.6)), radial-gradient(#E4FF00 20%,black);
+margin: auto;
+border-radius: 10vh;
+
+}
+.prize .money #rich:hover{
+
+background: linear-gradient(rgba(69, 204, 0, 0.5),rgba(35, 71, 0, 0.5)), radial-gradient(#E4FF00 40%,black);
+}
+.prize .money #rich:active{
+  margin-top: 0.5vh;
+  box-shadow:
+}
 .case{
 display: none;
   position: relative;
@@ -157,7 +264,7 @@ border-top: 0.4vh solid rgba(0,0,0,0.9);
   position:absolute;
 bottom:0;
 width: 100%;
-background: linear-gradient(45deg,#8a8a8a,#424242);}
+}
 
 .case .open .segment .down p{
   font-family: sans-serif;
@@ -167,13 +274,7 @@ text-shadow: 0.3vh 0.1vh black;
 text-align: left;
 }
 
-.case .open .segment .down{
-border-top: 0.4vh solid rgba(0,0,0,0.9);
-position:absolute;
-bottom:0;
-width: 100%;
-background: linear-gradient(45deg,#8a8a8a,#424242);
-}
+
 
 .case .open .segment .down .type{
   font-weight: bold;
@@ -202,7 +303,7 @@ margin-top: 0;
 }
 .name{
   position: relative;
-  height: 45vh;
+  height: 48vh;
   background: url(img/selo.png), url(img/tuman.png);
   background-position: center 90% ,53%;
   background-repeat: no-repeat;
@@ -219,7 +320,7 @@ margin-top: 0;
   height: 10vh;
   width: 80vh;
 position: absolute;
-top: 35vh;
+top: 38vh;
 left: 0;
 right: 0;
 bottom: 0;
@@ -240,7 +341,7 @@ background: -webkit-linear-gradient(#0089CE, #1C1C1C);
   transition: 0.5s;
   position: relative;
 
-  height: 15vh;
+  height: 12vh;
   width: 100%;
 }
 .button .click{
