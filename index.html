@@ -24,11 +24,12 @@
   <div class="win" id="win">
 <p id="fname">Гречка | "Гудвилл"</p>
 <div class="photo">
-<img id="fphoto"src="img/gudvill.png" alt="">
-  <p id="qual">Качество</p>
+<img id="fphoto" src="" alt="">
+  <p id="qual">После транспортировки</p>
+  <p id="price">Цена</p>
 </div>
 <div class="money">
-    <p id="rich" onclick="end()">Вывести 2150руб.</p>
+    <p id="rich" onclick="end()">Вывести</p>
 </div>
   </div>
 </section>
@@ -88,7 +89,23 @@
   </section>
 </section>
 
-
+<section class="list">
+</section>
+<footer><div class="contacts" id="web">
+<a href="https://vk.com/zlaks_king"><img src="img/vk.png" alt=""> </a>
+<a href="https://twitter.com/LZlaki"><img src="img/tw.png" alt=""> </a>
+<a href="https://facebook.com/Lucky-Zlaki-2319062351694644/"><img src="img/fb.png" alt=""> </a>
+<a href="mail.html"><img src="img/ml.png" alt=""> </a>
+</div>
+<div class="contacts" id="sites">
+<a href=""><img src="img/lz-old.png" alt=""></a>
+<a href="https://pucfoundation.github.io"><img src="img/puc.png" alt=""></a>
+</div>
+<div class="cop">
+<p>© 20018 – 2019, Lucky-zlaki .  Все права защищены и принадлежат правообладателям.
+</p>
+</div>
+ </footer>
 
 
 
@@ -117,6 +134,18 @@
 
 
 <script type="text/javascript">
+window.onscroll = function() {Sticky()};
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+function Sticky() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
 var time=0;
 var price=0;
 var balance=100;
@@ -140,9 +169,11 @@ var img3;
 var cost1;
 var cost2;
 
-var qual = [" ","Низший Сорт",  "Залежавшаяся",  "После Транспортировки",  "Немного Залежавшаяся", "Прямо с Поля"];
+var qual = ["Как это возможно?","Низший Сорт",  "Залежавшаяся",  "После Транспортировки",  "Немного Залежавшаяся", "Прямо с Поля"];
+
 var final = new Audio('img/final.ogg');
 var starts = new Audio('img/start.mp3');
+
 function start(){
 document.getElementById('face').style.height=0;
 document.getElementById('face').style.opacity=0;
@@ -186,33 +217,28 @@ cost2=cost1;
 	}
   var random1=Math.floor(Math.random()*100) +1;
   if (random1==100) {
+    img1= "img/tush.png"
     color1="#caab05";
-    var random2 = Math.floor(Math.random()*2) +1;
-    switch (random2) {
-      case 1:
-      type1="Круто";
-      name1="ОМЕГАЛУЛ";
-      cost1= 12000;
-        break;
-      case 2:
-      type1= "ПРЕКРАСНО"
-      name1="МОНКАОМЕГА";
-      cost1= 12999;
-      break;}
+    type1="Тушенка";
+    name1="Знаток :)";
+    cost1= 6890;
+
     }
     else if((random1<100 )&&(random1>=97)){
       color1="#eb4b4b";
 		var random2 = Math.floor(Math.random()*2) +1;
     switch (random2) {
       case 1:
-      type1= "Д"
-      name1="5Хед";
-      cost1= 300;
+      img1= "img/grech2.png"
+      type1= "Гречка"
+      name1="Bob's Red Mill";
+      cost1= 2100;
         break;
       case 2:
-      type1= "Ж"
-      name1="ФилсГудМэн";
-      cost1= 299;
+      img1= "img/perl3.png"
+      type1= "Перловка"
+      name1="Черный хлеб";
+      cost1= 1890;
       break;}
 
 		}
@@ -221,78 +247,95 @@ cost2=cost1;
 		var random2 = Math.floor(Math.random()*3) +1;
     switch (random2) {
     case 1:
-    type1= "В";
-    name1="Пепега";
-    cost1= 200;
+    img1= "img/grech5.png"
+    type1= "Гречка";
+    name1="FineLife";
+    cost1= 650;
     break;
     case 2:
-    type1= "Г"
-    name1="ПогЧамп";
-    cost1= 199;
+    img1= "img/man5.png"
+    type1= "Манка"
+    name1="Еврозлак";
+    cost1= 540;
     break;
     case 3:
-    type1= "Е"
-    name1="Лул";
-    cost1= 198;
+    img1= "img/perl5.png"
+    type1= "Перловка"
+    name1="Ярмарка";
+    cost1= 720;
     break;}
 		}
-		else if((random1<90 )&&(random1>=75)){
+		else if((random1<90 )&&(random1>=79)){
       color1="#884dff";
 	var random2 = Math.floor(Math.random()*4) +1;
   switch (random2) {
   case 1:
-  type1= "Я"
-  name1="Каппа";
-  cost1= 100;
+  img1= "img/man1.png"
+  type1= "Манка"
+  name1="Агро-альянс";
+  cost1= 131;
   break;
   case 2:
-  type1= "Х"
-  name1="ФорХед";
-  cost1= 99;
+  img1= "img/man2.png"
+  type1= "Манка"
+  name1="Царь";
+  cost1= 145;
   break;
   case 3:
-  type1= "П"
-  name1="ГачиБасс";
-  cost1= 98;
+  img1= "img/perl2.png"
+  type1= "Перловка"
+  name1="Мистраль";
+  cost1= 152;
   break;
   case 4:
-  type1= "Л"
-  name1="МонкаС";
-  cost1= 97;
+  img1= "img/perl7.png"
+  type1= "Перловка"
+  name1="Нацональ";
+  cost1= 118;
   break;}
 		}
 		else {
       color1="#1155dd";
-
-		var random2 = Math.floor(Math.random()*5) +1;
+		var random2 = Math.floor(Math.random()*6) +1;
     switch (random2) {
     case 1:
-    type1= "А"
-    name1=":)";
-    cost1= 30;
+    img1= "img/grech1.png"
+    type1= "Гречка"
+    name1="365 дней";
+    cost1= 19;
     break;
     case 2:
-    type1= "Ф"
-    name1=":(";
-    cost1= 29;
+    img1= "img/grech3.png"
+    type1= "Гречка"
+    name1="MAKFA";
+    cost1= 23;
     break;
     case 3:
-    type1= "Ж"
-    name1="B)";
-    cost1= 28;
+    img1= "img/grech4.png"
+    type1= "Гречка"
+    name1="Алтайская сказка";
+    cost1= 21;
     break;
     case 4:
-    type1= "Ш"
-    name1=":O";
-    cost1= 27;
+    img1= "img/man6.png"
+    type1= "Манка"
+    name1="ЛаКаМи";
+    cost1= 15;
     break;
     case 5:
-    type1= "С"
-    name1=";P";
-    cost1= 26;
+    img1= "img/perl1.png"
+    type1= "Перловка"
+    name1="Агрокултура";
+    cost1= 18;
+    break;
+    case 6:
+    img1= "img/perl4.png"
+    type1= "Перловка"
+    name1="Алтайская сказка";
+    cost1= 20;
     break;}
 		}
-    img1="img/smile.png";
+
     document.getElementById('name1').innerHTML = name1;
     document.getElementById('down1').style.background = "linear-gradient(45deg ,"+ color1 +" 50%,rgba(10,10,10,0.5)),"+color1;
       document.getElementById('type1').innerHTML = type1;
@@ -340,7 +383,7 @@ document.getElementById('case').style.height=0;
 document.getElementById('case').style.opacity=0;
 
 document.getElementById('fname').innerHTML=type2+" | "+name2;
-document.getElementById('rich').innerHTML="Вывести "+price+"руб.";
+document.getElementById('price').innerHTML=price+"руб.";
 document.getElementById('fphoto').src= img2;
 document.getElementById('fphoto').style.animation ="style 1s ease-in-out 1";
 document.getElementById('fname').style.animation ="style 1s ease-in-out 1";
@@ -359,6 +402,9 @@ function end(){
 document.getElementById("blackscreen").style.display="none";
 balance+=price;
 }
+window.onload = function () {
+
+};
 </script>
 
 </body>
