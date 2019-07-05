@@ -1,0 +1,411 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0
+<html>
+<head>
+    <title>Кейсы</title>
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="img/LZ-min.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <img id="logo" src="img/LZ1.png" alt="">
+  </header>
+
+  <nav id="navbar">
+      <a href="http://lucky-zlakki.github.io" >Главная</a>
+      <a href="https://lucky-zlakki.github.io/roulette/" class="active">Кейсы</a>
+      <a href="https://lucky-zlakki.github.io/partners/">Спонсоры</a>
+  </nav>
+
+
+<div id="blackscreen">
+
+
+<section class="prize">
+  <div class="win" id="win">
+<p id="fname">Гречка | "Гудвилл"</p>
+<div class="photo">
+<img id="fphoto" src="" alt="">
+  <p id="qual">После транспортировки</p>
+  <p id="price">Цена</p>
+</div>
+<div class="money">
+    <p id="rich" onclick="end()">Вывести</p>
+</div>
+  </div>
+</section>
+</div>
+
+
+
+  <section class="case" id="case">
+<div class="bordik">
+
+</div>
+<div class="bord">
+  <div class="arrow">
+  </div>
+</div>
+
+<div class="open">
+
+  <div class="segment" id="segment3">
+    <img id="img3" src="" alt="">
+    <div class="down" id="down3">
+<p class="type" id="type3">Тип</p>
+<p id="name3">Название<p>
+</div>
+  </div>
+
+
+    <div class="segment" id="segment2">
+      <img id="img2" src="" alt="">
+      <div class="down" id="down2">
+<p class="type" id="type2">Тип</p>
+<p  id="name2">Название<p>
+  </div>
+</div>
+
+
+  <div class="segment" id="segment1">
+    <img id="img1" src="" alt="">
+    <div class="down" id="down1">
+<p class="type" id="type1">Тип</p>
+<p  id="name1">Название<p>
+</div>
+
+    </div>
+</div>
+  </section>
+  <section id="face">
+  <section class="name">
+    <section class="lastname">
+      <p>Сельский пахарь</p>
+    </section>
+  </section>
+  <section class="button">
+    <div class="click" onclick="start()">
+Открыть кейс
+</div>
+  </section>
+</section>
+
+<section class="list">
+</section>
+<footer><div class="contacts" id="web">
+<a href="https://vk.com/zlaks_king"><img src="img/vk.png" alt=""> </a>
+<a href="https://twitter.com/LZlaki"><img src="img/tw.png" alt=""> </a>
+<a href="https://facebook.com/Lucky-Zlaki-2319062351694644/"><img src="img/fb.png" alt=""> </a>
+<a href="mail.html"><img src="img/ml.png" alt=""> </a>
+</div>
+<div class="contacts" id="sites">
+<a href=""><img src="img/LZ-old.png" alt=""></a>
+<a href="https://pucfoundation.github.io"><img src="img/puc.png" alt=""></a>
+</div>
+<div class="cop">
+<p>© 20018 – 2019, Lucky-zlaki .  Все права защищены и принадлежат правообладателям.
+</p>
+</div>
+ </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+window.onscroll = function() {Sticky()};
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+function Sticky() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
+var time=0;
+var price=0;
+var balance=100;
+
+var type1;
+var type2;
+var type3;
+
+var name1;
+var name2;
+var name3;
+
+var color1;
+var color2;
+var color3;
+
+var img1;
+var img2;
+var img3;
+
+var cost1;
+var cost2;
+
+var qual = ["Как это возможно?","Низший Сорт",  "Залежавшаяся",  "После Транспортировки",  "Немного Залежавшаяся", "Прямо с Поля"];
+
+var final = new Audio('img/final.ogg');
+var starts = new Audio('img/start.mp3');
+
+function start(){
+document.getElementById('face').style.height=0;
+document.getElementById('face').style.opacity=0;
+  document.getElementById('case').style.display="block";
+  setTimeout(pre,400);
+}
+function pre(){
+  starts.play();
+  document.getElementById('case').style.height="60vh";
+  document.getElementById('case').style.opacity=1;
+  document.getElementById('face').style.display="none";
+  setTimeout(proces);
+}
+
+function proces() {
+  if(time <=850){
+
+
+img3=img2;
+img2=img1;
+
+  type3=type2
+  type2=type1
+
+name3=name2;
+name2=name1;
+
+color3=color2;
+color2=color1;
+
+cost2=cost1;
+
+	if(time <100){
+		time=time +4;
+		}
+  else if((time<180 )&&(time>=100)){
+    time=time +3;
+  }
+	else {
+	time= time+Math.floor(Math.random()*100)+70;
+	}
+  var random1=Math.floor(Math.random()*100) +1;
+  if (random1==100) {
+    img1= "img/tush.png"
+    color1="#caab05";
+    type1="Тушенка";
+    name1="Знаток :)";
+    cost1= 6890;
+
+    }
+    else if((random1<100 )&&(random1>=97)){
+      color1="#eb4b4b";
+		var random2 = Math.floor(Math.random()*2) +1;
+    switch (random2) {
+      case 1:
+      img1= "img/grech2.png"
+      type1= "Гречка"
+      name1="Bob's Red Mill";
+      cost1= 2100;
+        break;
+      case 2:
+      img1= "img/perl3.png"
+      type1= "Перловка"
+      name1="Черный хлеб";
+      cost1= 1890;
+      break;}
+
+		}
+		else if((random1<97)&&(random1>=90)){
+      color1="#d32ce6";
+		var random2 = Math.floor(Math.random()*3) +1;
+    switch (random2) {
+    case 1:
+    img1= "img/grech5.png"
+    type1= "Гречка";
+    name1="FineLife";
+    cost1= 650;
+    break;
+    case 2:
+    img1= "img/man5.png"
+    type1= "Манка"
+    name1="Еврозлак";
+    cost1= 540;
+    break;
+    case 3:
+    img1= "img/perl5.png"
+    type1= "Перловка"
+    name1="Ярмарка";
+    cost1= 720;
+    break;}
+		}
+		else if((random1<90 )&&(random1>=79)){
+      color1="#884dff";
+	var random2 = Math.floor(Math.random()*4) +1;
+  switch (random2) {
+  case 1:
+  img1= "img/man1.png"
+  type1= "Манка"
+  name1="Агро-альянс";
+  cost1= 131;
+  break;
+  case 2:
+  img1= "img/man2.png"
+  type1= "Манка"
+  name1="Царь";
+  cost1= 145;
+  break;
+  case 3:
+  img1= "img/perl2.png"
+  type1= "Перловка"
+  name1="Мистраль";
+  cost1= 152;
+  break;
+  case 4:
+  img1= "img/perl7.png"
+  type1= "Перловка"
+  name1="Нацональ";
+  cost1= 118;
+  break;}
+		}
+		else {
+      color1="#1155dd";
+		var random2 = Math.floor(Math.random()*6) +1;
+    switch (random2) {
+    case 1:
+    img1= "img/grech1.png"
+    type1= "Гречка"
+    name1="365 дней";
+    cost1= 19;
+    break;
+    case 2:
+    img1= "img/grech3.png"
+    type1= "Гречка"
+    name1="MAKFA";
+    cost1= 23;
+    break;
+    case 3:
+    img1= "img/grech4.png"
+    type1= "Гречка"
+    name1="Алтайская сказка";
+    cost1= 21;
+    break;
+    case 4:
+    img1= "img/man6.png"
+    type1= "Манка"
+    name1="ЛаКаМи";
+    cost1= 15;
+    break;
+    case 5:
+    img1= "img/perl1.png"
+    type1= "Перловка"
+    name1="Агрокултура";
+    cost1= 18;
+    break;
+    case 6:
+    img1= "img/perl4.png"
+    type1= "Перловка"
+    name1="Алтайская сказка";
+    cost1= 20;
+    break;}
+		}
+
+    document.getElementById('name1').innerHTML = name1;
+    document.getElementById('down1').style.background = "linear-gradient(45deg ,"+ color1 +" 50%,rgba(10,10,10,0.5)),"+color1;
+      document.getElementById('type1').innerHTML = type1;
+      document.getElementById('img1').src= img1;
+
+    document.getElementById('name2').innerHTML = name2;
+    document.getElementById('down2').style.background = "linear-gradient(45deg ,"+ color2 +" 50%,rgba(10,10,10,0.5)),"+color2;
+    document.getElementById('type2').innerHTML = type2;
+    document.getElementById('img2').src= img2;
+
+    document.getElementById('name3').innerHTML = name3;
+    document.getElementById('down3').style.background = "linear-gradient(45deg ,"+ color3 +" 50%,rgba(10,10,10,0.5)),"+color3;
+      document.getElementById('type3').innerHTML= type3;
+      document.getElementById('img3').src= img3;
+
+
+
+    let sound = new Audio('img/sound.mp3');
+    sound.play();
+
+
+
+
+setTimeout(proces,time);
+  }
+
+
+
+
+    else {
+setTimeout(result,1000);
+}
+  }
+
+
+function result(){
+
+  var random3=Math.floor(Math.random()*5) +1;
+  price= Math.round(cost2*((random3*6+70)/100));
+  document.getElementById('face').style.height="60vh";
+  document.getElementById('face').style.opacity=1;
+  document.getElementById('qual').innerHTML = qual[random3];
+document.getElementById('face').style.display="block";
+document.getElementById('case').style.height=0;
+document.getElementById('case').style.opacity=0;
+
+document.getElementById('fname').innerHTML=type2+" | "+name2;
+document.getElementById('price').innerHTML=price+"руб.";
+document.getElementById('fphoto').src= img2;
+document.getElementById('fphoto').style.animation ="style 1s ease-in-out 1";
+document.getElementById('fname').style.animation ="style 1s ease-in-out 1";
+document.getElementById('win').style.background="linear-gradient( "+color2+" 30% ,#282729 80%)"
+time=0;
+setTimeout(aft,100);
+}
+function aft(){
+  final.play();
+document.getElementById("blackscreen").style.display="block";
+document.getElementById('case').style.display="none";
+document.getElementById('face').style.height="60vh";
+document.getElementById('face').style.opacity=1;
+}
+function end(){
+document.getElementById("blackscreen").style.display="none";
+balance+=price;
+}
+window.onload = function () {
+
+};
+</script>
+
+</body>
+</html>
