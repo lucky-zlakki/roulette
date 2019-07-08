@@ -457,10 +457,7 @@ color: rgba(255,255,255,0.7);
 margin-left: 3vh;
 margin-right:7vh;
 }
-.list .catalog .segment:hover>img{
-width: 26vh;
-height: 26vh;
-}
+ 
 .list .catalog .segment #type{
     position: absolute;
   left: 0;
