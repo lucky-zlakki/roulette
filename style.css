@@ -402,7 +402,7 @@ animation: blick 8s ease-in-out infinite;
 }
 
 .button .click:active {
-  transition: 0.5s linear;
+  transition: 0.1s linear;
 top:1vh;
 box-shadow:0 0 5vh 2vh #762CE5;
 color: rgba(255,255,255,0.7);
@@ -444,7 +444,7 @@ color: rgba(255,255,255,0.7);
 
 }
 .list .catalog .segment{
-  transition: 1s;
+  transition: 0.5s;
   margin: 5vh;
   display: inline-block;
   font-family: sans-serif;
@@ -454,11 +454,29 @@ color: rgba(255,255,255,0.7);
   height: 25vh;
 }
 .list .catalog .segment:hover{
-margin-left: 3vh;
-margin-right:7vh;
+  width: 27vh;
+  height: 27vh;
+  margin: 4vh;
 }
- 
+.list .catalog .segment:hover>img{
+  width: 27vh;
+  height: 27vh;
+}
+.list .catalog .segment:hover>#type{
+top: 27vh;
+}
+.list .catalog .segment:hover>#name{
+top: 30.5vh;
+}
+.list .catalog .segment:hover>#cost{
+  font-size: 4vh;
+left: 8vh;
+top:22vh ;
+width: 20vh;
+height: 5vh;
+}
 .list .catalog .segment #type{
+  transition: 0.5s;
     position: absolute;
   left: 0;
   top: 25vh;
@@ -466,12 +484,14 @@ margin-right:7vh;
   margin: auto;
 }
 .list .catalog .segment #name{
+  transition: 0.5s;
   position: absolute;
 left: 0;
 top: 28.5vh;
   margin: auto;
 }
 .list .catalog .segment #cost{
+  transition: 0.5s;
   font-family: fantasy;
   position: absolute;
 left: 10vh;
@@ -485,7 +505,7 @@ top:21vh ;
   border-radius: 30vh 0 0 0;
 }
 .list .catalog .segment img{
-  transition: 1s;
+  transition: 0.5s;
   position: absolute;
 left: 0;
 right: 0;
@@ -498,23 +518,23 @@ margin: auto;
 
 .blue{
   border-left: 1vh solid #1155dd;
-  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 30%,#6180BD);
+  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 25%,#6180BD);
 }
 .purple{
   border-left: 1vh solid #884DFF;
-  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 30%,#A579FF);
+  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 25%,#A579FF);
 }
 .pink{
   border-left: 1vh solid #D32CE6;
-  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 30%,#DE86E8);
+  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 25%,#DE86E8);
 }
 .red{
   border-left: 1vh solid #EB4B4B;
-  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 30%,#FE6D6D);
+  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 25%,#FE6D6D);
 }
 .gold{
   border-left: 1vh solid #caab05;
-  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 30%,#F1DA5F);
+  background: linear-gradient(240deg,rgba(255, 255, 255, 0) 25%,#F1DA5F);
 }
 
 
