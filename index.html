@@ -269,9 +269,6 @@ function Sticky() {
     navbar.classList.remove("sticky");
   }
 }
-var balance = 1000;
-balance = Number(localStorage["Balance"]) ;
-document.getElementById('balance').innerHTML = "Баланс: "+ balance +" руб.";
 var time=0;
 var price=0;
 
@@ -298,11 +295,19 @@ var qual = ["Как это возможно?","Низший Сорт",  "Зал�
 
 var final = new Audio('img/final.ogg');
 var starts = new Audio('img/start.mp3');
-
-var fs=5;
-if (fs<6) {
-fs=Number(localStorage["FreeSpins"]);
+var balance = Number(localStorage["Balance"]);
+if (isNaN(balance)==true) {
+localStorage["Balance"] = 0;
+balance = Number(localStorage["Balance"]);
 }
+balance = Number(localStorage["Balance"]) ;
+document.getElementById('balance').innerHTML = "Баланс: "+ balance +" руб.";
+var fs=Number(localStorage["FreeSpins"]);
+if (isNaN(fs)==true) {
+localStorage["FreeSpins"] = 5;
+fs = Number(localStorage["FreeSpins"]);
+}
+
 document.getElementById('freespin').innerHTML = "Free Spins: "+ fs ;
 function start(){
   if ( (fs<=0) & (balance<69) ) {
