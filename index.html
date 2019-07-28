@@ -1,5 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
     <title>Кейсы</title>
 <link rel="stylesheet" href="style.css">
@@ -8,6 +8,15 @@
 <body>
   <header>
     <img id="logo" src="img/LZ1.png" alt="">
+    <div class="profile">
+<img src="img/avatar.jpg" alt="">
+<div class="stats">
+</div>
+<p id="nick">Guest </p>
+<p id="balance">Баланс: </p>
+<p id="freespin">Free Spins: 1</p>
+<p id="change" onclick="nickame()"> Изменить</p>
+    </div>
   </header>
 
   <nav id="navbar">
@@ -84,7 +93,7 @@
   </section>
   <section class="button">
     <div class="click" onclick="start()">
-Открыть кейс
+Открыть за 69 руб.
 </div>
   </section>
 </section>
@@ -260,11 +269,11 @@ function Sticky() {
     navbar.classList.remove("sticky");
   }
 }
-
-
+var balance = 1000;
+balance = Number(localStorage["Balance"]) ;
+document.getElementById('balance').innerHTML = "Баланс: "+ balance +" руб.";
 var time=0;
 var price=0;
-var balance=100;
 
 var type1;
 var type2;
@@ -290,11 +299,29 @@ var qual = ["Как это возможно?","Низший Сорт",  "Зал�
 var final = new Audio('img/final.ogg');
 var starts = new Audio('img/start.mp3');
 
+var fs=5;
+if (fs<6) {
+fs=Number(localStorage["FreeSpins"]);
+}
+document.getElementById('freespin').innerHTML = "Free Spins: "+ fs ;
 function start(){
+  if ( (fs<=0) & (balance<69) ) {
+alert("Недостаточно средств.");
+  }
+  else {
+    if (fs>=1) {
+fs -= 1;
+localStorage["FreeSpins"] = fs ;
+document.getElementById("freespin").innerHTML = "Free Spins: " +fs;
+    }
+    else {
+      balance -= 69;
+      document.getElementById("balance").innerHTML = "Баланс: " + balance +" руб."
+    }
 document.getElementById('face').style.height=0;
 document.getElementById('face').style.opacity=0;
   document.getElementById('case').style.display="block";
-  setTimeout(pre,400);
+  setTimeout(pre,400);}
 }
 function pre(){
   starts.play();
@@ -503,7 +530,10 @@ document.getElementById('price').innerHTML=price+"руб.";
 document.getElementById('fphoto').src= img2;
 document.getElementById('fphoto').style.animation ="style 1s ease-in-out 1";
 document.getElementById('fname').style.animation ="style 1s ease-in-out 1";
-document.getElementById('win').style.background="linear-gradient( "+color2+" 30% ,#282729 80%)"
+document.getElementById('win').style.background="linear-gradient( "+color2+" 30% ,#282729 80%)";
+balance+= price;
+document.getElementById("balance").innerHTML = "Баланс: " +balance+" руб.";
+localStorage["Balance"] = balance;
 time=0;
 setTimeout(aft,100);
 }
@@ -516,11 +546,14 @@ document.getElementById('face').style.opacity=1;
 }
 function end(){
 document.getElementById("blackscreen").style.display="none";
-balance+=price;
 }
-window.onload = function () {
-
-};
+var nick = localStorage["Nickname"];
+document.getElementById('nick').innerHTML = nick ;
+function nickame(){
+localStorage["Nickname"] = prompt("Введите ваше имя: ");
+nick = localStorage["Nickname"];
+document.getElementById('nick').innerHTML = nick ;
+}
 </script>
 
 </body>
