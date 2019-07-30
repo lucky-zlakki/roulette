@@ -79,15 +79,15 @@ position: absolute;
 top: 5vh;
 }
 header .profile #change{
-position: absolute;
-font-family: sans-serif;
-font-size: 2vh;
-top: 9vh;
-left: 0.5vh;
-font-weight: bold;
-cursor: pointer;
-color: rgba(200,200,200,0.4);
-text-decoration: underline;
+  position: absolute;
+  font-family: sans-serif;
+  font-size: 2vh;
+  top: 11vh;
+  left: 0.5vh;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgba(200,200,200,0.6);
+  text-decoration: underline;
 }
 nav{
   background: rgba(0,137,206,0.4);
@@ -599,7 +599,7 @@ margin: auto;
 
 footer{
   background-color: #4F4F4F;
-height: 46vh;
+height: 50vh;
 }
  .contacts {
    margin-top: 7vh;
@@ -607,6 +607,7 @@ height: 46vh;
 display: inline-block;
 width: 100%;
 text-align: center;
+margin-bottom: 5vh;
 }
 .contacts a{
   transition: 1s;
@@ -631,8 +632,7 @@ width: 21vh;
 footer .cop{
   font-family: sans-serif;
   margin: auto;
-  margin-top: 5vh;
-width: 89%;
+width: 90%;
   border-top: 0.1vh solid black;
   color: rgba(255,255,255,0.5);
   font-size: 3vh;

@@ -15,7 +15,7 @@
 <p id="nick">Guest </p>
 <p id="balance">Баланс: </p>
 <p id="freespin">Free Spins: 1</p>
-<p id="change" onclick="nickame()"> Изменить</p>
+<a id="change" href="http://lucky-zlakki.github.io/profile">Профиль</a>
     </div>
   </header>
 
@@ -223,7 +223,7 @@
 <a href="mail.html"><img src="img/ml.png" alt=""> </a>
 </div>
 <div class="contacts" id="sites">
-<a href=""><img src="img/LZ-old.png" alt=""></a>
+<a href="http://lz-old.github.io"><img src="img/LZ-old.png" alt=""></a>
 <a href="https://pucfoundation.github.io"><img src="img/puc.png" alt=""></a>
 </div>
 <div class="cop">
@@ -269,6 +269,22 @@ function Sticky() {
     navbar.classList.remove("sticky");
   }
 }
+var menus;
+var plus;
+var caseop;
+if (isNaN(menus)==true) {
+localStorage["Menus"] = 0;
+menus= Number(localStorage["Menus"]);
+}
+if (isNaN(plus)==true) {
+localStorage["Plus"] = 0;
+plus = Number(localStorage["Plus"]);
+}
+if (isNaN(caseop)==true) {
+localStorage["Case"] = 0;
+caseop = Number(localStorage["Case"]);
+}
+
 var time=0;
 var price=0;
 
@@ -321,11 +337,15 @@ document.getElementById("freespin").innerHTML = "Free Spins: " +fs;
     }
     else {
       balance -= 69;
+      menus -= 69;
+      localStorage["Menus"] = menus;
       document.getElementById("balance").innerHTML = "Баланс: " + balance +" руб."
     }
 document.getElementById('face').style.height=0;
 document.getElementById('face').style.opacity=0;
   document.getElementById('case').style.display="block";
+  caseop+=1;
+  localStorage["Case"] = caseop;
   setTimeout(pre,400);}
 }
 function pre(){
@@ -540,6 +560,8 @@ balance+= price;
 document.getElementById("balance").innerHTML = "Баланс: " +balance+" руб.";
 localStorage["Balance"] = balance;
 time=0;
+plus+= price;
+localStorage["Plus"]= plus;
 setTimeout(aft,100);
 }
 function aft(){
@@ -554,11 +576,7 @@ document.getElementById("blackscreen").style.display="none";
 }
 var nick = localStorage["Nickname"];
 document.getElementById('nick').innerHTML = nick ;
-function nickame(){
-localStorage["Nickname"] = prompt("Введите ваше имя: ");
-nick = localStorage["Nickname"];
-document.getElementById('nick').innerHTML = nick ;
-}
+
 </script>
 
 </body>
