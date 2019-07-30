@@ -556,9 +556,6 @@ document.getElementById('fphoto').src= img2;
 document.getElementById('fphoto').style.animation ="style 1s ease-in-out 1";
 document.getElementById('fname').style.animation ="style 1s ease-in-out 1";
 document.getElementById('win').style.background="linear-gradient( "+color2+" 30% ,#282729 80%)";
-balance+= price;
-document.getElementById("balance").innerHTML = "Баланс: " +balance+" руб.";
-localStorage["Balance"] = balance;
 time=0;
 plus+= price;
 localStorage["Plus"]= plus;
@@ -572,6 +569,9 @@ document.getElementById('face').style.height="60vh";
 document.getElementById('face').style.opacity=1;
 }
 function end(){
+  balance+= price;
+  document.getElementById("balance").innerHTML = "Баланс: " +balance+" руб.";
+  localStorage["Balance"] = balance;
 document.getElementById("blackscreen").style.display="none";
 }
 var nick = localStorage["Nickname"];
