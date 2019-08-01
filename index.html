@@ -269,9 +269,9 @@ function Sticky() {
     navbar.classList.remove("sticky");
   }
 }
-var menus;
-var plus;
-var caseop;
+var menus=  Number(localStorage["Menus"]);
+var plus= Number(localStorage["Plus"]);
+var caseop= Number(localStorage["Case"]);
 if (isNaN(menus)==true) {
 localStorage["Menus"] = 0;
 menus= Number(localStorage["Menus"]);
