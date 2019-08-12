@@ -305,7 +305,7 @@ display: none;
   right: 0;
   position: absolute;
  margin: auto;
- z-index: 5;
+ z-index: 2;
  width: 0.3vh;
  height: 33.5vh;
  background-color: #88632b;
